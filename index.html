@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 2em; /* Extra large */
+    font-weight: bold;
+    text-align: center;
+  }
+  #buttons {
+    margin-top: 20px;
+  }
+  .cta {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .cta-yes {
+    background-color: green;
+    color: white;
+  }
+  .cta-no {
+    background-color: red;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<h1>Você quer um beijo?</h1>
+<div id="buttons">
+  <button class="cta cta-yes" id="yes">Yes</button>
+  <button class="cta cta-no" id="no">No</button>
+</div>
+
+<script>
+  document.getElementById('yes').onclick = function() {
+    document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100%;">Cool ;-)</div>';
+  };
+
+  document.getElementById('no').onclick = function() {
+    var yesButton = document.getElementById('yes');
+    var currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+    yesButton.style.fontSize = (currentSize + 5) + 'px';
+  };
+</script>
+</body>
+</html>
